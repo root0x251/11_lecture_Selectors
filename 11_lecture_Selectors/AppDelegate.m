@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Object.h"
 @interface AppDelegate ()
 
 @end
@@ -16,9 +16,80 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // метод 1
+//    SEL selectorOne = @selector(testMethod);
+    [self performSelector:@selector(testMethod)];     // вызов селектора в одну строку
+//    [self performSelector:selectorOne]; // вызов селектора
+    
+    // метод 2
+//    SEL selectorTwo = @selector(testMethodWhithParametr:);
+//    [self performSelector:selectorTwo withObject:@"test string"];
+    [self performSelector:@selector(testMethodWhithParametr:) withObject:@"test string"];
+    
+    // метод 3
+//    SEL selectThree = @selector(testMethodWhithTwoParametr:parametrTwo:);
+//    [self performSelector:selectThree withObject:@"parametr One" withObject:@"parametr Two"];
+    [self performSelector:@selector(testMethodWhithTwoParametr:parametrTwo:) withObject:@"parametr One" withObject:@"parametr Two"];
+    
+    // c задержкой в 5 секунд
+    [self performSelector:@selector(testMethod) withObject:nil afterDelay: 5.f]; // появелнеие с задержкой в 5 секуед
+    
+    Object *obj = [Object new];
+    [self performSelector:@selector(testMethod)];
+    [obj performSelector:@selector(testMethod)];
+    
+#pragma mark - Incapsulation secretMethod
+    // метод скрытый инкапсуляцией
+    NSString *secretText =  [obj performSelector:@selector(secretMethod)];
+    NSLog(@"secret Method - %@", secretText);
+    
+#pragma mark - NSinteger
+    // метод передающий NSinteger (примитивные типы)
+    [self performSelector:@selector(testMethodWhithInt:) withObject:[NSNumber numberWithInt:2]];
+    
+    
+    // вывод селектора из
+    NSString *callFromSelector = NSStringFromSelector(@selector(testMethod));   // из селектора делаем строку
+    SEL callSelectorFromString = NSSelectorFromString(callFromSelector);        // из строки делаем селетктор
+    
+    
+    
+    
+    // метод который принимает более 3 параметров (Примитивных и Строковых типов данных)
+    NSString *string = [self testMethodAllTyps:@"строка" par2:2 par3:2.2323f par4:1];
+    NSLog(@"string = %@", string);
     return YES;
 }
+
+- (void) testMethod {
+    NSLog(@"тест тест тест ");
+}
+// метод с параметром
+- (void) testMethodWhithParametr: (NSString *) string {
+    NSLog(@"test Method Whith Parametr - %@", string);
+}
+
+// мктод с двумя параметрами
+- (void) testMethodWhithTwoParametr: (NSString *) stringOne parametrTwo: (NSString *)stringTwo {
+    NSLog(@"parametr one - %@, parametr two - %@", stringOne, stringTwo);
+}
+
+// метод передающий NSinteger (примитивные типы)
+- (void) testMethodWhithInt: (NSInteger) intValue {
+    NSLog(@"test Method Whith Int = %d", intValue); // печатает рандомное число test Method Whith Int = 2070407952
+}
+
+// метод который принимает более 3 параметров (Примитивных и Строковых типов данных)
+- (NSString *) testMethodAllTyps: (NSString *) string par2: (NSInteger) intValue par3: (CGFloat) floatValue par4: (BOOL) boolValue {
+    return [NSString stringWithFormat:@"string - %@, par2 - %d, par3 - %.2f, par4 - %hhd", string, intValue, floatValue, boolValue];
+}
+
+
+
+
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

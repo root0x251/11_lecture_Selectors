@@ -15,6 +15,7 @@
 		F977E4AF1E6BF9D6003414F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F977E4AD1E6BF9D6003414F5 /* LaunchScreen.storyboard */; };
 		F977E4BA1E6BF9D6003414F5 /* _1_lecture_SelectorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F977E4B91E6BF9D6003414F5 /* _1_lecture_SelectorsTests.m */; };
 		F977E4C51E6BF9D6003414F5 /* _1_lecture_SelectorsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F977E4C41E6BF9D6003414F5 /* _1_lecture_SelectorsUITests.m */; };
+		F977E4D41E6C0716003414F5 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = F977E4D31E6C0716003414F5 /* Object.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		F977E4C01E6BF9D6003414F5 /* 11_lecture_SelectorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 11_lecture_SelectorsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F977E4C41E6BF9D6003414F5 /* _1_lecture_SelectorsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _1_lecture_SelectorsUITests.m; sourceTree = "<group>"; };
 		F977E4C61E6BF9D6003414F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F977E4D21E6C0716003414F5 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Object.h; path = ../Object.h; sourceTree = "<group>"; };
+		F977E4D31E6C0716003414F5 /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Object.m; path = ../Object.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 			children = (
 				F977E4A21E6BF9D6003414F5 /* AppDelegate.h */,
 				F977E4A31E6BF9D6003414F5 /* AppDelegate.m */,
+				F977E4D21E6C0716003414F5 /* Object.h */,
+				F977E4D31E6C0716003414F5 /* Object.m */,
 				F977E4A51E6BF9D6003414F5 /* ViewController.h */,
 				F977E4A61E6BF9D6003414F5 /* ViewController.m */,
 				F977E4A81E6BF9D6003414F5 /* Main.storyboard */,
@@ -275,6 +280,7 @@
 			files = (
 				F977E4A71E6BF9D6003414F5 /* ViewController.m in Sources */,
 				F977E4A41E6BF9D6003414F5 /* AppDelegate.m in Sources */,
+				F977E4D41E6C0716003414F5 /* Object.m in Sources */,
 				F977E4A11E6BF9D6003414F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
